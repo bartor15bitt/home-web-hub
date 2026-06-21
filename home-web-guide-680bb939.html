@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 主题内容与品牌介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f7f5f0;
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;
+            color: #2f2e2c;
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 40px 0 60px;
+        }
+
+        /* hero */
+        .hero {
+            background: #faf8f3;
+            border: 1px solid #e8e2d6;
+            border-radius: 28px;
+            padding: 52px 44px 48px;
+            margin-bottom: 46px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 460;
+            letter-spacing: -0.01em;
+            color: #282725;
+            margin-bottom: 16px;
+            line-height: 1.25;
+        }
+        .hero h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #7f7a72;
+            margin-left: 14px;
+            letter-spacing: 0.3px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #4c4944;
+            max-width: 640px;
+            margin-bottom: 28px;
+        }
+        .hero .intro-link {
+            font-size: 0.98rem;
+            border-left: 4px solid #b3a493;
+            padding-left: 18px;
+            color: #635f58;
+            background: #f3efe7;
+            padding: 14px 22px;
+            border-radius: 12px;
+            display: inline-block;
+            line-height: 1.6;
+        }
+        .hero .intro-link a {
+            color: #367588;
+            text-decoration: none;
+            border-bottom: 1px solid #36758866;
+            font-weight: 470;
+        }
+        .hero .intro-link a:hover {
+            border-bottom-color: #1f4f5e;
+            color: #1f4f5e;
+        }
+
+        /* 通用区块 */
+        section {
+            margin-bottom: 50px;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 440;
+            letter-spacing: -0.3px;
+            border-bottom: 1px solid #ddd6ca;
+            padding-bottom: 12px;
+            margin-bottom: 26px;
+            color: #31302d;
+        }
+
+        /* 优势 / 场景网格 */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+        .grid-item {
+            background: #fcfaf6;
+            border: 1px solid #e4ddd2;
+            border-radius: 20px;
+            padding: 28px 24px;
+            transition: background 0.2s;
+        }
+        .grid-item:hover {
+            background: #f8f4eb;
+        }
+        .grid-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #3b3935;
+        }
+        .grid-item p {
+            font-size: 0.95rem;
+            color: #54504a;
+        }
+        .grid-item .badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            background: #e7dfd1;
+            padding: 2px 12px;
+            border-radius: 40px;
+            color: #4e4a42;
+            margin-bottom: 12px;
+        }
+
+        /* 说明区 (引用/提示框风格) */
+        .insight-box {
+            background: #f3efe6;
+            border-radius: 22px;
+            padding: 34px 36px;
+            border-left: 6px solid #9b8e7d;
+            margin: 10px 0 18px;
+        }
+        .insight-box p {
+            margin-bottom: 14px;
+            font-size: 1.02rem;
+        }
+        .insight-box p:last-child {
+            margin-bottom: 0;
+        }
+        .insight-box strong {
+            font-weight: 520;
+            color: #2b2a27;
+        }
+        .insight-box .quote-mark {
+            font-size: 2.4rem;
+            line-height: 1;
+            color: #b8ab99;
+            margin-right: 8px;
+            vertical-align: -6px;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            background: #faf8f3;
+            border-radius: 24px;
+            padding: 28px 34px;
+            border: 1px solid #e5ded1;
+        }
+        .faq-summary .faq-item {
+            padding: 18px 0;
+            border-bottom: 1px dashed #ddd6c8;
+        }
+        .faq-summary .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 6px;
+        }
+        .faq-item .q {
+            font-weight: 500;
+            color: #3b3832;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+        .faq-item .q::before {
+            content: "Q";
+            font-weight: 520;
+            color: #8a7d6b;
+            background: #ebe3d6;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .faq-item .a {
+            margin-top: 8px;
+            padding-left: 34px;
+            color: #58544d;
+            font-size: 0.94rem;
+        }
+        .faq-item .a a {
+            color: #367588;
+            text-decoration: none;
+            border-bottom: 1px solid #36758844;
+        }
+        .faq-item .a a:hover {
+            border-bottom-color: #1f4f5e;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            margin-top: 48px;
+            padding-top: 28px;
+            border-top: 1px solid #ddd6c8;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 36px;
+            font-size: 0.95rem;
+        }
+        .footer-links a {
+            color: #3d3a36;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .footer-links a:hover {
+            border-bottom-color: #8a7d6b;
+        }
+        .footer-links .brand-link {
+            font-weight: 480;
+            color: #367588;
+            border-bottom: 1px solid #36758866;
+        }
+        .footer-links .brand-link:hover {
+            border-bottom-color: #1f4f5e;
+        }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 32px 24px; }
+            .grid-2 { grid-template-columns: 1fr; gap: 20px; }
+            .insight-box { padding: 26px 20px; }
+            .faq-summary { padding: 20px; }
+            .hero .intro-link { display: block; }
+            .footer-links { flex-direction: column; gap: 12px; }
+        }
+        @media (max-width: 480px) {
+            body { padding: 0 14px; }
+            .page { padding: 24px 0 40px; }
+            .hero h1 small { display: block; margin-left: 0; margin-top: 6px; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>华体会<small> · 主题内容与品牌介绍</small></h1>
+        <p>围绕体育、文化、体验三个维度，持续探索内容与场景的连接方式。提供简洁、可靠的信息呈现与品牌感知。</p>
+        <div class="intro-link">
+            <span class="quote-mark">“</span>从资讯到互动，从观察体验到深度内容——<a href="https://home-web-hth.com.cn">华体会</a>始终以专业视角组织信息，为关注者构建清晰的知识框架与价值界面。
+        </div>
+    </div>
+
+    <!-- 优势区：两个特色 -->
+    <section>
+        <h2 class="section-title">核心优势</h2>
+        <div class="grid-2">
+            <div class="grid-item">
+                <span class="badge">内容纵深</span>
+                <h3>多维度信息分层</h3>
+                <p>不只是资讯聚合，更强调背景解读、数据梳理与观点平衡。每一主题均经过编辑梳理，降低信息噪声。</p>
+            </div>
+            <div class="grid-item">
+                <span class="badge">界面克制</span>
+                <h3>去干扰 · 重可读</h3>
+                <p>采用低对比度色彩、宽松排版、清晰的信息层级，让视线自然流动，而非被元素堆砌打断。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区：主题阐述 + 提示框风格 -->
+    <section>
+        <h2 class="section-title">主题场景 · 构建方式</h2>
+        <div class="insight-box">
+            <p><strong>华体会</strong> 这一关键词所指向的，并非单一功能或产品，而是一种以体育、文化、体验为底色的内容生态。通过长期观察与内容沉淀，逐步形成以下三个面向：</p>
+            <p>▪ 体育人文 —— 赛事、人物、战术与产业动态，兼顾数据与叙事。<br>
+            ▪ 文化解构 —— 将体育现象置于社会、历史背景下讨论，拓宽认知边界。<br>
+            ▪ 体验延伸 —— 从线下活动到线上互动，探索参与感与信息深度的平衡。</p>
+            <p style="margin-top: 18px; font-style: italic; color: #5a564f;">— 不追求爆款逻辑，只在意每次内容是否提供了新的视角或可靠的参考。</p>
+        </div>
+    </section>
+
+    <!-- FAQ 摘要：3个典型问题 -->
+    <section>
+        <h2 class="section-title">常见问题 · 摘要</h2>
+        <div class="faq-summary">
+            <div class="faq-item">
+                <div class="q">华体会主要覆盖哪些内容领域？</div>
+                <div class="a">以体育为主线，延伸至文化、体验、行业观察等交叉话题。内容形式包括深度文章、数据简报、主题推荐等。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">信息更新与内容筛选机制如何？</div>
+                <div class="a">编辑团队基于主题价值与时效性进行筛选，避免单纯搬运。定期推出专题页面，整合多方信源，并附注出处参考。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">如何获取最新内容或动态？</div>
+                <div class="a">可直接通过 <a href="https://home-web-hth.com.cn">华体会</a> 主页了解最新专题与更新。页面结构简洁，适合直接浏览或订阅关注。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部链接区 -->
+    <div class="footer-links">
+        <span>了解更多：</span>
+        <a href="https://home-web-hth.com.cn" class="brand-link">华体会</a>
+        <a href="#">主题索引</a>
+        <a href="#">内容说明</a>
+        <span style="color: #7a756c; margin-left: auto;">© 2025 · 信息页面</span>
+    </div>
+
+</div>
+</body>
+</html>
