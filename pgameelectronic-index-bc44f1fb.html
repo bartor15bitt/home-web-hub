@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 pg模拟器 · 一篇安静的笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f5f2ee;
+            color: #2d2a26;
+            line-height: 1.7;
+            letter-spacing: 0.02em;
+        }
+
+        .hero {
+            background: #1d1c1a;
+            background-image: radial-gradient(ellipse at 20% 50%, #3b3834 0%, #1a1917 100%);
+            padding: 5rem 1.5rem 4.5rem;
+            text-align: center;
+            color: #eae6df;
+            border-bottom: 2px solid #c8b89a;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 450;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.6rem;
+            color: #ded6c4;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #aba394;
+            border-top: 1px solid #4f4a42;
+            display: inline-block;
+            padding-top: 0.75rem;
+            margin-top: 0.2rem;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 2.8rem 1.5rem 4rem;
+        }
+
+        .article {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.8rem 2.2rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .article p {
+            margin-bottom: 1.6rem;
+            font-size: 1.05rem;
+        }
+
+        .article .pull-quote {
+            border-left: 4px solid #b0986c;
+            background: #f8f4ed;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0 2rem;
+            border-radius: 0 16px 16px 0;
+            font-style: normal;
+            color: #4d453b;
+        }
+
+        .article .pull-quote span {
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+
+        .article .highlight-link {
+            color: #906f4a;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+            font-weight: 450;
+            transition: color 0.2s, background 0.1s;
+        }
+
+        .article .highlight-link:hover {
+            color: #4b3b2a;
+            background: #f0e6d9;
+            text-decoration-color: #b0986c;
+        }
+
+        .faq-note {
+            margin-top: 2.2rem;
+            background: #fcfaf7;
+            border: 1px solid #e1d9ce;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+        }
+
+        .faq-note summary {
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #3d362e;
+            cursor: pointer;
+            padding: 0.2rem 0;
+        }
+
+        .faq-note .faq-item {
+            margin: 1rem 0 0.6rem;
+        }
+
+        .faq-note .faq-item p {
+            margin-bottom: 0.4rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-note .faq-item strong {
+            color: #7d684b;
+            font-weight: 500;
+        }
+
+        .visit-message {
+            margin-top: 2rem;
+            padding: 0.8rem 0 0.2rem;
+            text-align: right;
+            font-size: 0.95rem;
+            color: #6f6558;
+            border-top: 1px dashed #d9cfc0;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #80766a;
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 3.4rem 1rem 3rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .article {
+                padding: 1.8rem 1.2rem;
+            }
+            .article p {
+                font-size: 1rem;
+            }
+            .faq-note {
+                padding: 1.2rem 1rem;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .container {
+                padding-left: 0.8rem;
+                padding-right: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>一段关于工具与场景的笔记</h1>
+    <div class="sub">—— 不止是模拟，更是对交互方式的朴素观察</div>
+</header>
+
+<div class="container">
+    <div class="article">
+        <p>
+            写这篇东西的起因，其实是某天晚上我在想一个问题：当我们在谈论「模拟器」的时候，我们到底在谈论什么？是那些被还原的画面、按键布局，还是某种更安静的东西——比如一种熟悉的操作节奏，或者在特定环境下才能体会到的沉浸感。
+        </p>
+        <p>
+            我试着用了几天不同的方案，最后把注意力停在一个叫 <a href="https://pgameelectronic.com" class="highlight-link">pg模拟器</a> 的环境上。它没有铺天盖地的宣传，也没有复杂得让人头晕的配置项。相反，它给人的第一印象是干净、直接，像一本随手翻开的平装书，没什么负担。
+        </p>
+        <p>
+            它的核心逻辑其实不复杂：在本地或轻量部署的环境里，提供一个相对完整的运行层。有意思的是，这种「不复杂」反而让使用过程变得很自然。你不用花时间搞懂那些无关的底层细节，只需要关注你想做的事情本身。
+        </p>
+
+        <div class="pull-quote">
+            <span>“好的工具往往不会一直提醒你它的存在。它退到背景里，让你几乎忘了中间隔了一层。”<br>—— 这种分寸感，在 pg模拟器 上表现得挺明显。</span>
+        </div>
+
+        <p>
+            当然，任何工具都有它的适用边界。我自己的体会是，如果你正在寻找一种不那么笨重的运行方式，或者在调试、演示、本地测试的场景里需要快速起一个环境，它会是一个值得尝试的选择。但不是万能药——我建议先明确自己的真实需求，再去判断是否契合。
+        </p>
+        <p>
+            另外，我不太倾向于把这类工具描述成「必须拥有」的东西。保持一种克制的视角反而能看得更清楚。就像你自己做菜，不会因为一把刀很漂亮就认为它能替你做所有事。
+        </p>
+
+        <div class="faq-note">
+            <details>
+                <summary>▸ 一些常见但零碎的问题（FAQ 摘要）</summary>
+                <div class="faq-item">
+                    <p><strong>它需要很高的配置吗？</strong> 基本不需要。多数情况下普通笔记本就能流畅运行，主要依赖操作系统的基础兼容性。</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>和同类工具有什么明显区别？</strong> 更侧重轻量、低干扰的体验。没有太多花哨的皮肤和弹窗，功能上偏向实用主义。</p>
+                </div>
+                <div class="faq-item">
+                    <p><strong>适合完全的新手吗？</strong> 如果是第一次接触这类工具，建议先花十分钟熟悉一下基本界面和术语。总体来说上手门槛不高，但完全零基础可能需要一点适应。</p>
+                </div>
+            </details>
+        </div>
+
+        <p style="margin-top: 1.8rem;">
+            说到底，这篇文章只是一次个人角度的记录。如果你恰好也对轻量化的运行环境好奇，或者想看看不同工具之间的细微差异，不妨自己花一点时间去感受。毕竟别人的描述永远替代不了亲手操作那一两次。
+        </p>
+
+        <div class="visit-message">
+            如果你愿意，可以从 <a href="https://pgameelectronic.com" class="highlight-link">pg模拟器</a> 的主页开始，自己翻一翻。
+        </div>
+    </div>
+
+    <div class="footer-note">
+        ——— 写于一个普通的夜晚 · 2025 · 无广告无追踪 ———
+    </div>
+</div>
+
+</body>
+</html>
